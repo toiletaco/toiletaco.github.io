@@ -1,0 +1,35 @@
+p{ color: white;
+ font-size: 30px;
+}
+
+h1{ color: white;
+ font-size: 30px;
+}
+
+ul{list-style-type: none;
+margin: 0;
+padding:0;}
+
+a{ color: white;
+background-color: magenta;
+padding: 12px 14px;
+text-decoration: none;
+margin-bottom: 10px;
+}
+
+a:hover{ background-color: purple;
+}
+
+a:active{ 
+transform: 3px;}
+
+img{
+border-radius: 50%;
+transition: all 0.5s ease-in-out;
+opacity: 1.0;
+}
+
+img:hover{
+opacity: 1.0;
+transform: rotate(360deg);
+}
