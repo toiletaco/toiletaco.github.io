@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projekt Wiesiołek</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 0;
+            padding: 20px;
+            font-family: Arial, sans-serif;
+            background-image: url('images/background.gif');
+            background-color: rgb(36, 41, 38);
+            background-size: 100%;
+            background-position: center;
+            color: white;
+        }
+        .header-img {
+            width: 200px;
+            height: auto;
+            margin-top: 50px;
+            margin-bottom: 80px;
+            position: relative; /* Dodano dla z-index */
+            z-index: 1; /* Dodano dla zapewnienia, że link będzie na wierzchu */
+        }
+        .logo-img {
+            width: 100px;
+            height: auto;
+            margin-bottom: 10px;
+        }
+        .work-img {
+            width: 50%;
+            height: auto;
+            margin-bottom: -110px;
+            margin-top: -150px;
+        }
+        .description {
+            font-family: Arial, Helvetica, sans-serif;
+            font-weight: bold;
+            font-size: 12px;
+            text-align: center;
+            max-width: 800px;
+            margin-top: 20px;
+            margin-bottom: 60px;
+        }
+
+        .additional-images img {
+            margin-top: 0px;
+            width: 640px;
+            height: auto;
+            margin-bottom: 50px;
+        }
+        .video-container {
+            display: flex;
+            gap: 50px; /* Ustawiony odstęp między filmami */
+            margin-bottom: 50px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Link do strony głównej -->
+    <a href="index.html">
+        <img src="images/kb.png" alt="KB Logo" class="header-img">
+    </a>
+
+    <!-- GIF Wiesiołek -->
+    <img src="images/wiesiolek.gif" alt="Wiesiołek GIF" class="work-img">
+    
+    <!-- Opis projektu -->
+    <div class="description">
+        Wiesiołek Dwuletni is a harshnoise instrument inspired by the design of the evening primrose flower. The dried plant encapsulates the free seeds, creating a natural rattle. The instrument is made of welded steel plate and simple electronics. Inside are metal screws, nuts and washers, which bang against the walls when shaken. Generated vibrations are picked up by a piezoelectric transducer and converted into sound waves, which combined with guitar effects, create the final sound.
+    </div>
+    
+    <div class="additional-images">
+        <img src="images/sonyfota1.jpg" alt="Sony Photo 1">
+    </div>
+
+    <!-- Wideo -->
+    <div class="video-container">
+        <iframe title="vimeo-player" src="https://player.vimeo.com/video/917163926?h=d519a5ef0c" width="640" height="360" frameborder="0" allowfullscreen></iframe>
+    </div>
+
+    <!-- Logo projektu Wiesiołek -->
+    <img src="images/wiesiolek_logo.png" alt="Wiesiołek Logo" class="logo-img">
+</body>
+</html>
