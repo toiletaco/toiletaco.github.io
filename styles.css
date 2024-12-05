@@ -1,0 +1,106 @@
+@font-face {
+  font-family: myFont;
+  src: url(olive.ttf);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+  background-image: url("images/background.gif");
+  background-size: cover;
+  background-color: black;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
+}
+
+.header-logo {
+  position: absolute;
+  top: 25px;
+  left: 40px;
+  width: 30%;
+  z-index: 10;
+}
+
+.header-right {
+  float: right;
+  position: absolute;
+  text-align: right;
+  top: 55px;
+  right: 60px;
+}
+
+.header-right2 {
+  float: right;
+  position: absolute;
+  text-align: right;
+  top: 45px;
+  right: 60px;
+}
+
+.appear-image {
+  opacity: 0;
+}
+
+.appear-image:hover {
+  opacity: 1;
+}
+
+.container {
+  display: flex; /* Ustawia elementy w linii */
+  align-items: center; /* Wyrównuje obrazek i tekst w pionie */
+  justify-content: center; /* Centruje całą zawartość */
+  margin: 120px auto;
+  width: 75%;
+}
+
+.wiesiolek-image {
+  width: 100%; /* Obrazek zajmuje całą szerokość kontenera */
+  height: auto; /* Wysokość jest dostosowywana proporcjonalnie */
+  max-width: 700; /* Maksymalna szerokość obrazka */
+  border-radius: 10px;
+}
+
+.text p {
+  font-family: myFont;
+  font-size: clamp(10px, 1.5vw, 30px);
+  line-height: 1;
+  color: white;
+  max-width: 60vw;
+  margin-right: 110px;
+}
+
+.content-video {
+  text-align: center;
+  margin-top: 30px;
+  margin-bottom: 50px;
+  position: relative;
+  padding-bottom: 56.25%; /* Ustala proporcje wideo (16:9) */
+}
+
+.content-video iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 50%; /* Wideo wypełnia całą szerokość */
+  height: 50%; /* Wideo dostosowuje się do wysokości */
+  border-radius: 10px;
+}
+
+/* Responsywne dostosowanie dla wideo na małych ekranach */
+@media (max-width: 768px) {
+  .content-video iframe {
+    height: 250px; /* Zmniejsz wysokość na mniejszych ekranach */
+  }
+}
+
+@media (max-width: 480px) {
+  .content-video iframe {
+    height: 200px; /* Jeszcze mniejsza wysokość na telefonach */
+  }
+}

@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="pl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>about me</title>
+    <style>
+      /* Ładowanie czcionki olive.ttf */
+      @font-face {
+        font-family: "Olive";
+        src: url("olive.ttf") format("truetype");
+      }
+
+      body {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin: 0;
+        padding: 20px;
+        font-family: Arial, sans-serif;
+        background-image: url("images/background.gif");
+        background-color: rgb(36, 41, 38);
+        background-size: 100%;
+        background-position: center;
+        color: white;
+      }
+
+      .header-img {
+        width: 200px;
+        height: auto;
+        margin-top: 50px;
+        margin-bottom: 60px;
+        position: relative;
+        z-index: 1;
+      }
+
+      .container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        max-width: 1000px;
+        padding: 20px;
+      }
+
+      .photo {
+        width: 400px;
+        height: auto;
+        margin-right: 20px;
+        object-fit: cover;
+      }
+
+      /* Zastosowanie czcionki Olive */
+      .text {
+        font-family: "Olive", Arial, Helvetica, sans-serif;
+        margin-left: 20px;
+        font-size: 23px;
+        line-height: 1;
+      }
+
+      .text strong {
+        font-size: 60px;
+        line-height: 1.3;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Link do strony głównej -->
+    <a href="index.html">
+      <img src="images/kb.png" alt="KB Logo" class="header-img" />
+    </a>
+
+    <!-- Kontener z opisem -->
+    <div class="container">
+      <img src="images/me.jpeg" alt="Profile Photo" class="photo" />
+      <div class="text">
+        <strong>INFO</strong><br />
+        name: Kazimierz<br />
+        surname: Babik<br />
+        birthday: 01.09.2001<br />
+        eyes: Brown<br />
+        nationality: Polish<br />
+        shoe size: US10<br />
+        jewlery: Silver<br />
+        favorite movie: Mysterious Skin (2004)<br />
+        flavor preference: Blue<br /><br />
+
+        <strong>CHARACTER</strong><br />
+        A graphic designer and design student at SWPS, always on time and the
+        go-to person for anything cyberspace-related. An enthusiast of culture
+        and a self-proclaimed fan of ugly things, currently diving into the
+        realms of sound design and music. Famously averse to hot drinks and
+        renowned for giving unforgettable gifts.
+      </div>
+    </div>
+  </body>
+</html>

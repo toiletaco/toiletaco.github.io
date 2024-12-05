@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="pl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>found footage</title>
+    <style>
+      @font-face {
+        font-family: "OliveFont";
+        src: url("olive.ttf") format("truetype");
+      }
+
+      body {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin: 0;
+        padding: 20px;
+        font-family: "OliveFont", sans-serif;
+        background-image: url("images/background.gif");
+        background-color: rgb(36, 41, 38);
+        background-size: 100%;
+        background-position: center;
+        color: white;
+      }
+
+      .header-img {
+        width: 200px;
+        height: auto;
+        margin-top: 50px;
+        margin-bottom: 60px;
+        position: relative;
+        z-index: 1;
+      }
+
+      .logo-img {
+        width: 100px;
+        height: auto;
+        margin-bottom: 10px;
+      }
+
+      .description {
+        font-family: "OliveFont", sans-serif;
+        font-size: 20px;
+        text-align: center;
+        max-width: 820px;
+        margin-top: 0px;
+        margin-bottom: 60px;
+      }
+
+      .video-container {
+        display: flex;
+        gap: 50px;
+        margin-bottom: 20px;
+        width: 90%; /* Zwiększa szerokość kontenera */
+        justify-content: center;
+      }
+
+      .video-container iframe {
+        width: 1000px; /* Zwiększona szerokość wideo */
+        height: 563px; /* Zwiększona wysokość wideo */
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Link do strony głównej -->
+    <a href="index.html">
+      <img src="images/kb.png" alt="KB Logo" class="header-img" />
+    </a>
+
+    <div class="video-container">
+      <iframe
+        title="vimeo-player"
+        src="https://player.vimeo.com/video/665938298?h=eaa2dc06e6"
+        frameborder="0"
+        allowfullscreen
+      ></iframe>
+    </div>
+
+    <!-- Opis projektu -->
+    <div class="description">
+      FOUNDFOOTAGE is an experimental music video created from
+      never-before-played YouTube footage with zero views. I used the
+      found-footage technique to select clips that, lacking any popularity,
+      emphasize an intimate, often unsettling character. These clips, woven
+      together into a loose narrative, create the visual layer for a noise track
+      by Merzbow, which intensifies the sense of discomfort and chaos.
+    </div>
+  </body>
+</html>
