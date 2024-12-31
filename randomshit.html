@@ -5,19 +5,25 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>random shit</title>
     <style>
+      @font-face {
+        font-family: "OliveFont";
+        src: url("olive.ttf") format("truetype");
+      }
+
       body {
         display: flex;
         flex-direction: column;
         align-items: center;
         margin: 0;
         padding: 20px;
-        font-family: Arial, sans-serif;
+        font-family: "OliveFont", sans-serif;
         background-image: url("images/background.gif");
         background-color: rgb(36, 41, 38);
         background-size: 100%;
         background-position: center;
         color: white;
       }
+
       .header-img {
         width: 200px;
         height: auto;
@@ -26,30 +32,108 @@
         position: relative;
         z-index: 1;
       }
+
       .logo-img {
         width: 100px;
         height: auto;
         margin-bottom: 10px;
       }
 
-      .description {
-        font-family: Arial, Helvetica, sans-serif;
-        font-style: italic;
-        font-size: 12px;
+      .containers {
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+        max-width: 1200px;
+        margin-top: 20px;
+      }
+
+      .container {
+        flex: 1;
+        margin: 0 10px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
         text-align: center;
-        max-width: 800px;
-        margin-top: 0px;
-        margin-bottom: 60px;
+      }
+
+      /* Left container: Align content even higher */
+      .container:first-child {
+        align-items: flex-start;
+        margin-top: -110px; /* Apply negative margin to push content further up */
+      }
+
+      .container img,
+      .container iframe {
+        max-width: 100%;
+        height: auto;
+      }
+
+      /* Make iframe responsive */
+      .container iframe {
+        width: 100%;
+        height: 500px; /* Set a desired height for the video */
+      }
+
+      /* Resize the second image in the left container and center it */
+      .container:first-child img:nth-of-type(2) {
+        width: 80%; /* Resize the second image */
+        margin-top: -70px; /* Adjust the space between the GIF and the image */
+        margin-left: auto; /* Center the image horizontally */
+        margin-right: auto; /* Center the image horizontally */
+      }
+
+      /* Specific styling for second image in right container */
+      .container .image-under-video {
+        width: 60%; /* Reduced size of the second image under the video */
+        margin-top: -30px; /* Reduced space between video and image */
+        margin-left: auto; /* Center the image horizontally */
+        margin-right: auto; /* Center the image horizontally */
+      }
+
+      /* Further reduce space between text and video */
+      .container p {
+        margin-bottom: -30px; /* Reduced space between text and video */
       }
     </style>
   </head>
   <body>
-    <!-- Link do strony głównej -->
+    <!-- Link to the homepage -->
     <a href="index.html">
       <img src="images/kb.png" alt="KB Logo" class="header-img" />
     </a>
 
-    <!-- Opis mnie -->
-    <div class="description">UNDER CONSTRUCTION</div>
+    <!-- Vertical containers -->
+    <div class="containers">
+      <!-- Container 1 (Left container) -->
+      <div class="container">
+        <img src="images/wiesiolek.gif" alt="Sample GIF" />
+        <img src="images/sonyfota1.jpg" alt="Sample Image" />
+      </div>
+
+      <!-- Container 2 (Right container) -->
+      <div class="container">
+        <p>
+          Wiesiołek Dwuletni is a harshnoise instrument inspired by the design
+          of the evening primrose flower. The dried plant encapsulates the free
+          seeds, creating a natural rattle. The instrument is made of welded
+          steel plate and simple electronics. Inside are metal screws, nuts and
+          washers, which bang against the walls when shaken. Generated
+          vibrations are picked up by a piezoelectric transducer and converted
+          into sound waves, which combined with guitar effects, create the final
+          sound.
+        </p>
+        <iframe
+          src="https://player.vimeo.com/video/917163926?h=d519a5ef0c"
+          frameborder="0"
+          allow="autoplay; fullscreen; picture-in-picture"
+          allowfullscreen
+        ></iframe>
+        <img
+          src="images/wiesiolek_logo.png"
+          alt="wiesiolek_logo"
+          class="image-under-video"
+        />
+      </div>
+    </div>
   </body>
 </html>

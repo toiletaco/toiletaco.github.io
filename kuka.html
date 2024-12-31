@@ -5,13 +5,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>kuka</title>
     <style>
+      @font-face {
+        font-family: "OliveFont";
+        src: url("olive.ttf") format("truetype");
+      }
+
       body {
         display: flex;
         flex-direction: column;
         align-items: center;
         margin: 0;
         padding: 20px;
-        font-family: Arial, sans-serif;
+        font-family: "OliveFont", sans-serif;
         background-image: url("images/background.gif");
         background-color: rgb(36, 41, 38);
         background-size: 100%;
@@ -32,14 +37,88 @@
         margin-bottom: 10px;
       }
 
-      .description {
-        font-family: Arial, Helvetica, sans-serif;
-        font-style: italic;
-        font-size: 12px;
-        text-align: center;
-        max-width: 800px;
-        margin-top: 0px;
+      .container {
+        width: 100%;
         margin-bottom: 60px;
+      }
+
+      .container-1,
+      .container-2,
+      .container-3 {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 60px;
+      }
+
+      .container-1 img,
+      .container-2 img {
+        width: 500px;
+        height: auto;
+        margin-right: 70px;
+        object-fit: cover;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        cursor: pointer;
+      }
+
+      .container-1 img:hover,
+      .container-2 img:hover {
+        transform: scale(1.03);
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+      }
+
+      .container-1 .text {
+        max-width: 500px;
+        font-size: 16px;
+        text-align: left;
+      }
+      .container-3 .text {
+        max-width: 450px;
+        font-size: 16px;
+        text-align: right;
+        margin-right: 70px;
+      }
+
+      .container-2 {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+
+      .container-2 img {
+        width: 200px;
+        height: 200px;
+        object-fit: cover;
+        margin: 9px; /* Small margin between images */
+      }
+
+      .credits-img {
+        width: 900px;
+        height: auto;
+        margin-top: 20px;
+      }
+
+      /* Powiększenie zdjęcia w modalu */
+      .modal {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.9);
+        justify-content: center;
+        align-items: center;
+        z-index: 1000;
+      }
+
+      .modal img {
+        max-width: 90%;
+        max-height: 90%;
+      }
+
+      .modal.active {
+        display: flex;
       }
     </style>
   </head>
@@ -49,7 +128,84 @@
       <img src="images/kb.png" alt="KB Logo" class="header-img" />
     </a>
 
-    <!-- Opis mnie -->
-    <div class="description">UNDER CONSTRUCTION</div>
+    <!-- Kontener nr 1: zdjęcie po lewej, tekst po prawej -->
+    <div class="container container-1">
+      <img src="images/trzymiski.png" alt="Image 1" />
+      <div class="text">
+        <p>
+          “Porcelain Rain” is an experimental project that explores the creative
+          potential of the Kuka robotic system in shaping porcelain. The aim was
+          to reimagine traditional porcelain crafting by transferring the
+          intricate, skillful process from human hands to a robotic system. This
+          approach replaces direct human intervention with autonomous
+          programming, enabling the robot to independently create bowls.
+        </p>
+      </div>
+    </div>
+
+    <!-- Kontener nr 2: 5 kwadratowych zdjęć -->
+    <div class="container container-2">
+      <img src="images/miska1.png" alt="Image 2" />
+      <img src="images/miska2.png" alt="Image 3" />
+      <img src="images/miska3.png" alt="Image 4" />
+      <img src="images/miska4.png" alt="Image 5" />
+      <img src="images/miska5.png" alt="Image 6" />
+    </div>
+
+    <!-- Kontener nr 3: tekst po lewej, filmik z Vimeo po prawej -->
+    <div class="container container-3">
+      <div class="text">
+        <p>
+          The design process began with manual experiments in a ceramic workshop
+          to study porcelain’s behavior and flow. These trials led to the
+          creation of a custom tool for the Kuka robot, incorporating syringes
+          filled with porcelain dyed in shades from white to black. Precise
+          recipes for water, porcelain, and dye ensured consistent viscosity for
+          smooth application. The robotic movements and porcelain application
+          were programmed in Rhino Grasshopper, enabling precise control over
+          colors, shapes, and textures. Pressurized air from a compressor
+          allowed the robot to apply the porcelain onto plaster molds in
+          programmed sequences.
+        </p>
+      </div>
+      <iframe
+        src="https://player.vimeo.com/video/1036392413?h=efc44edbf8"
+        width="560"
+        height="315"
+        frameborder="0"
+        allow="autoplay; fullscreen; picture-in-picture"
+        allowfullscreen
+      ></iframe>
+    </div>
+
+    <!-- Pod trzema kontenerami na środku zdjęcie -->
+    <img src="images/credits.png" alt="Credits" class="credits-img" />
+
+    <!-- Modal do powiększania zdjęć -->
+    <div class="modal" id="imageModal">
+      <img src="" alt="Powiększone zdjęcie" id="modalImage" />
+    </div>
+
+    <script>
+      // Wybieranie zdjęć i modalu
+      const images = document.querySelectorAll(
+        ".container-1 img, .container-2 img"
+      );
+      const modal = document.getElementById("imageModal");
+      const modalImage = document.getElementById("modalImage");
+
+      // Obsługa kliknięcia w zdjęcie
+      images.forEach((img) => {
+        img.addEventListener("click", () => {
+          modalImage.src = img.src;
+          modal.classList.add("active");
+        });
+      });
+
+      // Zamknięcie modalu po kliknięciu w tło
+      modal.addEventListener("click", () => {
+        modal.classList.remove("active");
+      });
+    </script>
   </body>
 </html>

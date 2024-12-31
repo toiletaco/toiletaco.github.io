@@ -5,13 +5,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>screen printing</title>
     <style>
+      @font-face {
+        font-family: "OliveFont";
+        src: url("olive.ttf") format("truetype");
+      }
+
       body {
         display: flex;
         flex-direction: column;
         align-items: center;
         margin: 0;
         padding: 20px;
-        font-family: Arial, sans-serif;
+        font-family: "OliveFont", sans-serif;
         background-image: url("images/background.gif");
         background-color: rgb(36, 41, 38);
         background-size: 100%;
@@ -31,7 +36,6 @@
         height: auto;
         margin-bottom: 10px;
       }
-
       .description {
         font-family: Arial, Helvetica, sans-serif;
         font-style: italic;
@@ -41,6 +45,55 @@
         margin-top: 0px;
         margin-bottom: 60px;
       }
+      .gallery1,
+      .gallery2 {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        width: 90%;
+        gap: 25px;
+        margin-bottom: 5px;
+      }
+      .gallery1 img,
+      .gallery2 img {
+        width: calc(23% - 10px);
+        height: auto;
+        object-fit: cover;
+        cursor: pointer;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+      }
+      .gallery1 img:hover,
+      .gallery2 img:hover {
+        transform: scale(1.03);
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+      }
+      .title {
+        font-size: 18px;
+        font-weight: normal;
+        margin: 20px 0;
+        text-align: center;
+        margin-bottom: 40px;
+      }
+      /* Powiększone zdjęcie */
+      .modal {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.9);
+        justify-content: center;
+        align-items: center;
+        z-index: 1000;
+      }
+      .modal img {
+        max-width: 90%;
+        max-height: 90%;
+      }
+      .modal.active {
+        display: flex;
+      }
     </style>
   </head>
   <body>
@@ -49,7 +102,46 @@
       <img src="images/kb.png" alt="KB Logo" class="header-img" />
     </a>
 
-    <!-- Opis mnie -->
-    <div class="description">UNDER CONSTRUCTION</div>
+    <!-- Galeria Skansen -->
+    <div class="gallery1">
+      <img src="images/skansen1.png" alt="Skansen 1" />
+      <img src="images/skansen2.png" alt="Skansen 2" />
+      <img src="images/skansen3.png" alt="Skansen 3" />
+      <img src="images/skansen4.png" alt="Skansen 4" />
+    </div>
+    <div class="title">Skansen (2021)</div>
+
+    <!-- Galeria Invasive plants -->
+    <div class="gallery2">
+      <img src="images/fbi1.png" alt="Invasive 1" />
+      <img src="images/fbi2.png" alt="Invasive 2" />
+      <img src="images/fbi3.png" alt="Invasive 3" />
+    </div>
+    <div class="title">Invasive plants (2023)</div>
+
+    <!-- Modal -->
+    <div class="modal" id="imageModal">
+      <img src="" alt="Powiększone zdjęcie" id="modalImage" />
+    </div>
+
+    <script>
+      // Wybieranie zdjęć i modalu
+      const images = document.querySelectorAll(".gallery1 img, .gallery2 img");
+      const modal = document.getElementById("imageModal");
+      const modalImage = document.getElementById("modalImage");
+
+      // Obsługa kliknięcia w zdjęcie
+      images.forEach((img) => {
+        img.addEventListener("click", () => {
+          modalImage.src = img.src;
+          modal.classList.add("active");
+        });
+      });
+
+      // Zamknięcie modalu po kliknięciu w tło
+      modal.addEventListener("click", () => {
+        modal.classList.remove("active");
+      });
+    </script>
   </body>
 </html>
