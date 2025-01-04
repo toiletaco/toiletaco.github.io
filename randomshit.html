@@ -17,19 +17,46 @@
         background-size: 100%;
         background-position: center;
         color: white;
+        cursor: url("images/cursor.svg") 16 16, auto;
       }
-      .header-img {
-        width: 200px;
-        height: auto;
-        margin-top: 50px;
-        margin-bottom: 60px;
+
+      /* New header styling */
+      .header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 98%;
+        padding: 10px;
+        box-sizing: border-box;
+        margin-bottom: 30px;
         position: relative;
-        z-index: 1;
+        z-index: 10;
       }
-      .logo-img {
-        width: 100px;
+
+      .logo {
+        width: 250px;
         height: auto;
-        margin-bottom: 10px;
+        position: relative;
+        z-index: 20;
+      }
+
+      .nav-links {
+        display: flex;
+        gap: 40px;
+        z-index: 15;
+      }
+
+      .nav-links a {
+        display: block;
+        width: auto;
+        height: 30px;
+        position: relative;
+        z-index: 20;
+      }
+
+      .nav-links img {
+        height: 100%;
+        cursor: pointer;
       }
 
       .description {
@@ -44,12 +71,30 @@
     </style>
   </head>
   <body>
-    <!-- Link do strony głównej -->
-    <a href="index.html">
-      <img src="images/kb.png" alt="KB Logo" class="header-img" />
-    </a>
+    <!-- New header with logo and navigation links -->
+    <div class="header">
+      <a href="index.html">
+        <img src="images/kb.png" alt="KB Logo" class="logo" />
+      </a>
+      <div class="nav-links">
+        <a href="wiesiolek.html"
+          ><img src="images/WIESIOLEK.png" alt="Link 1"
+        /></a>
+        <a href="kuka.html"><img src="images/KUKA.png" alt="Link 2" /></a>
+        <a href="screenprinting.html"
+          ><img src="images/SP.png" alt="Link 3"
+        /></a>
+        <a href="foundfootage.html"><img src="images/FF.png" alt="Link 4" /></a>
+        <a href="randomshit.html"
+          ><img src="images/RANDOM.png" alt="Link 5"
+        /></a>
+      </div>
+    </div>
 
     <!-- Opis mnie -->
-    <div class="description">UNDER CONSTRUCTION</div>
+    <div class="description">
+      <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />UNDER
+      CONSTRUCTION
+    </div>
   </body>
 </html>

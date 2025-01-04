@@ -24,21 +24,45 @@
         color: white;
         min-height: 100vh; /* Ensure the body takes up at least the full height of the viewport */
         margin-bottom: 50px; /* Add bottom margin */
+        cursor: url("images/cursor.svg") 16 16, auto;
       }
 
-      .header-img {
-        width: 200px;
-        height: auto;
-        margin-top: 50px;
-        margin-bottom: 60px;
+      .header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 98%;
+        padding: 10px;
+        box-sizing: border-box;
+        margin-bottom: 50px;
         position: relative;
-        z-index: 1;
+        z-index: 10; /* Set z-index for the entire header */
       }
 
-      .logo-img {
-        width: 100px;
+      .logo {
+        width: 250px;
         height: auto;
-        margin-bottom: 10px;
+        position: relative; /* Ensure the logo is on top */
+        z-index: 20; /* Ensure the logo is clickable above other content */
+      }
+
+      .nav-links {
+        display: flex;
+        gap: 40px;
+        z-index: 15; /* Ensure navigation links are clickable */
+      }
+
+      .nav-links a {
+        display: block;
+        width: auto;
+        height: 30px;
+        position: relative;
+        z-index: 20; /* Ensure links are clickable above other content */
+      }
+
+      .nav-links img {
+        height: 100%;
+        cursor: pointer;
       }
 
       .containers {
@@ -99,10 +123,25 @@
     </style>
   </head>
   <body>
-    <!-- Link to the homepage -->
-    <a href="index.html">
-      <img src="images/kb.png" alt="KB Logo" class="header-img" />
-    </a>
+    <!-- New header with logo and navigation links -->
+    <div class="header">
+      <a href="index.html">
+        <img src="images/kb.png" alt="KB Logo" class="logo" />
+      </a>
+      <div class="nav-links">
+        <a href="wiesiolek.html"
+          ><img src="images/WIESIOLEK.png" alt="Link 1"
+        /></a>
+        <a href="kuka.html"><img src="images/KUKA.png" alt="Link 2" /></a>
+        <a href="screenprinting.html"
+          ><img src="images/SP.png" alt="Link 3"
+        /></a>
+        <a href="foundfootage.html"><img src="images/FF.png" alt="Link 4" /></a>
+        <a href="randomshit.html"
+          ><img src="images/RANDOM.png" alt="Link 5"
+        /></a>
+      </div>
+    </div>
 
     <!-- Vertical containers -->
     <div class="containers">

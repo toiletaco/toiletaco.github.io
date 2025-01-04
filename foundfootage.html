@@ -22,21 +22,51 @@
         background-size: 100%;
         background-position: center;
         color: white;
+        cursor: url("images/cursor.svg") 16 16, auto;
       }
 
-      .header-img {
-        width: 200px;
-        height: auto;
-        margin-top: 50px;
-        margin-bottom: 60px;
-        position: relative;
-        z-index: 1;
+      .header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 98%;
+        padding: 10px;
+        box-sizing: border-box;
+        margin-bottom: 40px;
       }
 
-      .logo-img {
-        width: 100px;
+      .logo {
+        width: 250px;
         height: auto;
-        margin-bottom: 10px;
+      }
+
+      .nav-links {
+        display: flex;
+        gap: 40px;
+      }
+
+      .nav-links a {
+        display: block;
+        width: auto;
+        height: 30px;
+      }
+
+      .nav-links img {
+        height: 100%;
+        cursor: pointer;
+      }
+
+      .video-container {
+        display: flex;
+        gap: 50px;
+        margin-bottom: 20px;
+        width: 90%;
+        justify-content: center;
+      }
+
+      .video-container iframe {
+        width: 1000px;
+        height: 563px;
       }
 
       .description {
@@ -47,26 +77,28 @@
         margin-top: 0px;
         margin-bottom: 60px;
       }
-
-      .video-container {
-        display: flex;
-        gap: 50px;
-        margin-bottom: 20px;
-        width: 90%; /* Zwiększa szerokość kontenera */
-        justify-content: center;
-      }
-
-      .video-container iframe {
-        width: 1000px; /* Zwiększona szerokość wideo */
-        height: 563px; /* Zwiększona wysokość wideo */
-      }
     </style>
   </head>
   <body>
-    <!-- Link do strony głównej -->
-    <a href="index.html">
-      <img src="images/kb.png" alt="KB Logo" class="header-img" />
-    </a>
+    <!-- Header z logo i linkami -->
+    <div class="header">
+      <a href="index.html"
+        ><img src="images/kb.png" alt="KB Logo" class="logo"
+      /></a>
+      <div class="nav-links">
+        <a href="wiesiolek.html"
+          ><img src="images/WIESIOLEK.png" alt="Link 1"
+        /></a>
+        <a href="kuka.html"><img src="images/KUKA.png" alt="Link 2" /></a>
+        <a href="screenprinting.html"
+          ><img src="images/SP.png" alt="Link 3"
+        /></a>
+        <a href="foundfootage.html"><img src="images/FF.png" alt="Link 4" /></a>
+        <a href="randomshit.html"
+          ><img src="images/RANDOM.png" alt="Link 5"
+        /></a>
+      </div>
+    </div>
 
     <div class="video-container">
       <iframe
