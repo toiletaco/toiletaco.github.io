@@ -77,10 +77,27 @@
         margin-top: 0px;
         margin-bottom: 60px;
       }
+
+      /* Stylizacja strzałki do przewijania */
+      .scroll-to-top {
+        position: fixed;
+        bottom: 50px;
+        right: 50px;
+        width: 50px;
+        height: 50px;
+        background-image: url("images/strzalka.png");
+        background-size: contain;
+        background-repeat: no-repeat;
+        cursor: pointer;
+        transition: transform 0.3s ease;
+      }
+
+      .scroll-to-top:hover {
+        transform: scale(1.1); /* Powiększenie przy najechaniu */
+      }
     </style>
   </head>
   <body>
-    <!-- Header z logo i linkami -->
     <div class="header">
       <a href="index.html"
         ><img src="images/kb.png" alt="KB Logo" class="logo"
@@ -90,13 +107,13 @@
           ><img src="images/WIESIOLEK.png" alt="Link 1"
         /></a>
         <a href="kuka.html"><img src="images/KUKA.png" alt="Link 2" /></a>
+        <a href="utensils.html"
+          ><img src="images/UTENSILS.png" alt="Link 3"
+        /></a>
         <a href="screenprinting.html"
-          ><img src="images/SP.png" alt="Link 3"
+          ><img src="images/SP.png" alt="Link 4"
         /></a>
-        <a href="foundfootage.html"><img src="images/FF.png" alt="Link 4" /></a>
-        <a href="randomshit.html"
-          ><img src="images/RANDOM.png" alt="Link 5"
-        /></a>
+        <a href="foundfootage.html"><img src="images/FF.png" alt="Link 5" /></a>
       </div>
     </div>
 
@@ -109,7 +126,6 @@
       ></iframe>
     </div>
 
-    <!-- Opis projektu -->
     <div class="description">
       FOUNDFOOTAGE is an experimental music video created from
       never-before-played YouTube footage with zero views. I used the
@@ -118,5 +134,17 @@
       together into a loose narrative, create the visual layer for a noise track
       by Merzbow, which intensifies the sense of discomfort and chaos.
     </div>
+
+    <!-- Strzałka przewijania na górę -->
+    <div class="scroll-to-top" onclick="scrollToTop()"></div>
+
+    <script>
+      function scrollToTop() {
+        window.scrollTo({
+          top: 0,
+          behavior: "smooth",
+        });
+      }
+    </script>
   </body>
 </html>

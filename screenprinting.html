@@ -25,7 +25,6 @@
         cursor: url("images/cursor.svg") 16 16, auto;
       }
 
-      /* New header styling */
       .header {
         display: flex;
         justify-content: space-between;
@@ -64,7 +63,6 @@
         cursor: pointer;
       }
 
-      /* Original page styles */
       .gallery1,
       .gallery2 {
         display: flex;
@@ -95,7 +93,6 @@
         margin-bottom: 40px;
       }
 
-      /* Modal styling */
       .modal {
         display: none;
         position: fixed;
@@ -115,6 +112,23 @@
       .modal.active {
         display: flex;
       }
+      /* Stylizacja strzałki do przewijania */
+      .scroll-to-top {
+        position: fixed;
+        bottom: 50px;
+        right: 50px;
+        width: 50px;
+        height: 50px;
+        background-image: url("images/strzalka.png");
+        background-size: contain;
+        background-repeat: no-repeat;
+        cursor: pointer;
+        transition: transform 0.3s ease;
+      }
+
+      .scroll-to-top:hover {
+        transform: scale(1.1); /* Powiększenie przy najechaniu */
+      }
     </style>
   </head>
   <body>
@@ -128,30 +142,30 @@
           ><img src="images/WIESIOLEK.png" alt="Link 1"
         /></a>
         <a href="kuka.html"><img src="images/KUKA.png" alt="Link 2" /></a>
+        <a href="utensils.html"
+          ><img src="images/UTENSILS.png" alt="Link 3"
+        /></a>
         <a href="screenprinting.html"
-          ><img src="images/SP.png" alt="Link 3"
+          ><img src="images/SP.png" alt="Link 4"
         /></a>
-        <a href="foundfootage.html"><img src="images/FF.png" alt="Link 4" /></a>
-        <a href="randomshit.html"
-          ><img src="images/RANDOM.png" alt="Link 5"
-        /></a>
+        <a href="foundfootage.html"><img src="images/FF.png" alt="Link 5" /></a>
       </div>
     </div>
 
     <!-- Galeria Skansen -->
     <div class="gallery1">
-      <img src="images/skansen1.jpeg" alt="Skansen 1" />
-      <img src="images/skansen2.jpeg" alt="Skansen 2" />
-      <img src="images/skansen3.jpeg" alt="Skansen 3" />
-      <img src="images/skansen4.jpeg" alt="Skansen 4" />
+      <img src="images/skansen1.png" alt="Skansen 1" />
+      <img src="images/skansen2.png" alt="Skansen 2" />
+      <img src="images/skansen3.png" alt="Skansen 3" />
+      <img src="images/skansen4.png" alt="Skansen 4" />
     </div>
     <div class="title">Skansen (2021)</div>
 
     <!-- Galeria Invasive plants -->
     <div class="gallery2">
-      <img src="images/fbi1.jpeg" alt="Invasive 1" />
-      <img src="images/fbi2.jpeg" alt="Invasive 2" />
-      <img src="images/fbi3.jpeg" alt="Invasive 3" />
+      <img src="images/fbi1.png" alt="Invasive 1" />
+      <img src="images/fbi2.png" alt="Invasive 2" />
+      <img src="images/fbi3.png" alt="Invasive 3" />
     </div>
     <div class="title">Invasive plants (2023)</div>
 
@@ -178,6 +192,18 @@
       modal.addEventListener("click", () => {
         modal.classList.remove("active");
       });
+    </script>
+
+    <!-- Strzałka przewijania na górę -->
+    <div class="scroll-to-top" onclick="scrollToTop()"></div>
+
+    <script>
+      function scrollToTop() {
+        window.scrollTo({
+          top: 0,
+          behavior: "smooth",
+        });
+      }
     </script>
   </body>
 </html>
