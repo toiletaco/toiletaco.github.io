@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>screen printing</title>
+    <title>velocity utensils</title>
     <!-- Google tag (gtag.js) -->
     <script
       async
@@ -22,18 +22,13 @@
     <link rel="apple-touch-icon" href="images/KB_logo.png" sizes="180x180" />
     <link rel="icon" href="images/KB_logo.png" type="image/png" />
     <style>
-      @font-face {
-        font-family: "OliveFont";
-        src: url("olive.ttf") format("truetype");
-      }
-
       body {
         display: flex;
         flex-direction: column;
         align-items: center;
         margin: 0;
         padding: 20px;
-        font-family: "OliveFont", sans-serif;
+        font-family: Arial, sans-serif;
         background-image: url("images/background.gif");
         background-color: rgb(0, 0, 0);
         background-size: 100%;
@@ -49,7 +44,7 @@
         width: 98%;
         padding: 10px;
         box-sizing: border-box;
-        margin-bottom: 40px;
+        margin-bottom: 30px;
         position: relative;
         z-index: 10;
       }
@@ -80,54 +75,73 @@
         cursor: pointer;
       }
 
-      .gallery1,
-      .gallery2 {
-        display: flex;
-        justify-content: center;
-        flex-wrap: wrap;
-        width: 90%;
-        gap: 25px;
-        margin-bottom: 5px;
-      }
-      .gallery1 img,
-      .gallery2 img {
-        width: calc(23% - 10px);
-        height: auto;
-        object-fit: cover;
-        cursor: pointer;
-        transition: transform 0.3s ease, box-shadow 0.3s ease;
-      }
-      .gallery1 img:hover,
-      .gallery2 img:hover {
-        transform: scale(1.03);
-      }
-      .title {
-        font-size: 18px;
-        font-weight: normal;
-        margin: 20px 0;
+      .description {
+        font-family: Arial, Helvetica, sans-serif;
+        font-style: italic;
+        font-size: 12px;
         text-align: center;
-        margin-bottom: 40px;
+        max-width: 800px;
+        margin-top: 0px;
+        margin-bottom: 60px;
       }
 
-      .modal {
+      .image-container {
+        display: flex;
+        justify-content: center;
+        width: 100%;
+        margin-top: -90px;
+      }
+
+      .image-container img {
+        width: 100%; /* Adjust width as needed */
+        max-width: 1200px; /* Optional: Limit the maximum width of the image */
+        height: auto;
+      }
+
+      /* Kontener dla dwóch kwadratowych obrazków */
+      .square-images-container {
+        display: flex;
+        gap: 40px;
+        margin-top: -90px;
+        margin-bottom: 60px;
+      }
+
+      .square-images-container img {
+        width: 600px;
+        height: 600px;
+        object-fit: cover;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        cursor: pointer;
+      }
+
+      .square-images-container img:hover {
+        transform: scale(1.03); /* Powiększenie po najechaniu */
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+      }
+
+      /* Powiększenie zdjęcia po kliknięciu */
+      .image-modal {
         display: none;
         position: fixed;
         top: 0;
         left: 0;
         width: 100%;
         height: 100%;
-        background-color: rgba(0, 0, 0, 0.9);
+        background-color: rgba(0, 0, 0, 0.7);
         justify-content: center;
         align-items: center;
-        z-index: 1000;
       }
-      .modal img {
+
+      .image-modal img {
         max-width: 90%;
         max-height: 90%;
+        object-fit: contain;
       }
-      .modal.active {
+
+      .image-modal.open {
         display: flex;
       }
+
       /* Stylizacja strzałki do przewijania */
       .scroll-to-top {
         position: fixed;
@@ -148,7 +162,6 @@
     </style>
   </head>
   <body>
-    <!-- New header with logo and navigation links -->
     <div class="header">
       <a href="index.html">
         <img src="images/kb.png" alt="KB Logo" class="logo" />
@@ -169,52 +182,27 @@
       </div>
     </div>
 
-    <!-- Galeria Skansen -->
-    <div class="gallery1">
-      <img src="images/skansen1.png" alt="Skansen 1" />
-      <img src="images/skansen2.png" alt="Skansen 2" />
-      <img src="images/skansen3.png" alt="Skansen 3" />
-      <img src="images/skansen4.png" alt="Skansen 4" />
+    <!-- Główne zdjęcie -->
+    <div class="image-container">
+      <img src="images/synth.png" alt="Utensils Image" />
     </div>
-    <div class="title">Skansen (2021)</div>
-
-    <!-- Galeria Invasive plants -->
-    <div class="gallery2">
-      <img src="images/fbi1.png" alt="Invasive 1" />
-      <img src="images/fbi2.png" alt="Invasive 2" />
-      <img src="images/fbi3.png" alt="Invasive 3" />
-    </div>
-    <div class="title">Invasive plants (2023)</div>
-
-    <!-- Modal -->
-    <div class="modal" id="imageModal">
-      <img src="" alt="Powiększone zdjęcie" id="modalImage" />
-    </div>
-
-    <script>
-      // Wybieranie zdjęć i modalu
-      const images = document.querySelectorAll(".gallery1 img, .gallery2 img");
-      const modal = document.getElementById("imageModal");
-      const modalImage = document.getElementById("modalImage");
-
-      // Obsługa kliknięcia w zdjęcie
-      images.forEach((img) => {
-        img.addEventListener("click", () => {
-          modalImage.src = img.src;
-          modal.classList.add("active");
-        });
-      });
-
-      // Zamknięcie modalu po kliknięciu w tło
-      modal.addEventListener("click", () => {
-        modal.classList.remove("active");
-      });
-    </script>
 
     <!-- Strzałka przewijania na górę -->
     <div class="scroll-to-top" onclick="scrollToTop()"></div>
 
     <script>
+      function openModal(imageSrc) {
+        const modal = document.getElementById("imageModal");
+        const modalImage = document.getElementById("modalImage");
+        modalImage.src = imageSrc;
+        modal.classList.add("open");
+      }
+
+      function closeModal() {
+        const modal = document.getElementById("imageModal");
+        modal.classList.remove("open");
+      }
+
       function scrollToTop() {
         window.scrollTo({
           top: 0,

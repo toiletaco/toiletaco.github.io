@@ -5,14 +5,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>work</title>
     <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-P2Z91TEZP2"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-P2Z91TEZP2"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
 
-  gtag('config', 'G-P2Z91TEZP2');
-</script>
+      gtag("config", "G-P2Z91TEZP2");
+    </script>
 
     <link rel="apple-touch-icon" href="images/KB_logo.png" sizes="180x180" />
     <link rel="icon" href="images/KB_logo.png" type="image/png" />
@@ -35,7 +40,7 @@
       .header-img {
         width: 200px;
         height: auto;
-        margin-bottom: 80px;
+        margin-bottom: 60px;
         margin-top: 50px;
       }
       .works {
@@ -53,6 +58,9 @@
         border-radius: 10px;
       }
       /* Obrazy o różnych rozmiarach */
+      .work-item.diysynth img {
+        max-width: 400px;
+      }
       .work-item.wiesiolek img {
         max-width: 500px;
       }
@@ -80,6 +88,11 @@
       }
 
       /* Specjalne ustawienia pozycji i rozmiaru dla każdej nakładki */
+      .overlay.diy {
+        top: -30px;
+        left: 10px;
+        transform: scale(1.3, 0.8);
+      }
       .overlay.wiesiolek {
         top: -30px;
         left: 10px;
@@ -115,6 +128,13 @@
 
     <div class="works">
       <!-- Link do strony Wiesiołka -->
+      <div class="work-item diysynth">
+        <a href="diysynth.html">
+          <img src="images/DIY.png" alt="DIY" />
+          <img class="overlay diy" src="images/DIY_HOVER.png" alt="DIY Hover" />
+        </a>
+      </div>
+
       <div class="work-item wiesiolek">
         <a href="wiesiolek.html">
           <img src="images/WIESIOLEK.png" alt="WIESIOLEK" />
