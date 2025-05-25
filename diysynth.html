@@ -102,13 +102,13 @@
       .square-images-container {
         display: flex;
         gap: 40px;
-        margin-top: -90px;
+        margin-top: 30px;
         margin-bottom: 60px;
       }
 
       .square-images-container img {
-        width: 600px;
-        height: 600px;
+        width: 500px;
+        height: 500px;
         object-fit: cover;
         transition: transform 0.3s ease, box-shadow 0.3s ease;
         cursor: pointer;
@@ -186,6 +186,48 @@
     <div class="image-container">
       <img src="images/synth.png" alt="Utensils Image" />
     </div>
+
+    <!-- Kontener z dwoma kwadratowymi obrazkami -->
+    <div class="square-images-container">
+      <img
+        src="images/final1.png"
+        alt="Utensils 1"
+        onclick="openModal('images/final1.png')"
+      />
+      <img
+        src="images/final2.png"
+        alt="Utensils 2"
+        onclick="openModal('images/final2.png')"
+      />
+    </div>
+
+    <!-- Modal do powiększonych zdjęć -->
+    <div id="imageModal" class="image-modal" onclick="closeModal()">
+      <img id="modalImage" src="" alt="Powiększone zdjęcie" />
+    </div>
+
+    <!-- Filmik -->
+    <div
+      style="
+        width: 100%;
+        max-width: 1200px;
+        aspect-ratio: 16 / 9;
+        margin-top: 20px;
+        margin-bottom: 60px;
+      "
+    >
+      <iframe
+        src="https://player.vimeo.com/video/1087538310?title=0&byline=0&portrait=0"
+        width="100%"
+        height="100%"
+        frameborder="0"
+        allow="autoplay; fullscreen; picture-in-picture"
+        allowfullscreen
+        style="border: none; width: 100%; height: 100%"
+      >
+      </iframe>
+    </div>
+    <script src="https://player.vimeo.com/api/player.js"></script>
 
     <!-- Strzałka przewijania na górę -->
     <div class="scroll-to-top" onclick="scrollToTop()"></div>
